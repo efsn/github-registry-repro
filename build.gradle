@@ -7,10 +7,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-}
-
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
@@ -27,10 +23,10 @@ publishing {
     repositories {
         maven {
             name = "Github"
-            url = uri("https://maven.pkg.github.com/trevjonez/github-registry-repro")
+            url = uri("https://maven.pkg.github.com/efsn/github-registry-repro")
             credentials {
-                username = findProperty("GITHUB_USERNAME")
-                password = findProperty("GITHUB_API_TOKEN")
+                username = findProperty("gpr.user")
+                password = findProperty("gpr.key")
             }
         }
     }
